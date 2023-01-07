@@ -17,6 +17,14 @@ public class IntDoubleList {
         this.head = head;
     }
 
+    public IntDoubleListElement getTail() {
+        return tail;
+    }
+
+    public IntDoubleListElement getHead() {
+        return head;
+    }
+
     public IntDoubleListElement getFirst() {
         return head;
     }
