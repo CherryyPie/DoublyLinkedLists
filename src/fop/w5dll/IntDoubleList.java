@@ -41,7 +41,7 @@ public class IntDoubleList {
         } else {
             tail.next = elem;
             elem.prev = tail;
-            elem = tail;
+            tail = elem;
         }
     }
 
