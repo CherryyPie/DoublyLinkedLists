@@ -17,6 +17,22 @@ public class IntDoubleList {
         return tail;
     }
 
+    public void setTail(IntDoubleListElement tail) {
+        this.tail = tail;
+    }
+
+    public void setHead(IntDoubleListElement head) {
+        this.head = head;
+    }
+
+    public IntDoubleListElement getTail() {
+        return tail;
+    }
+
+    public IntDoubleListElement getHead() {
+        return head;
+    }
+
     public void append(int info) {
         IntDoubleListElement elem = new IntDoubleListElement(info);
         if (head == null && tail == null) {
