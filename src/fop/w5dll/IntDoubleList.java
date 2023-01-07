@@ -17,11 +17,11 @@ public class IntDoubleList {
         this.head = head;
     }
 
-    public IntDoubleListElement getTail() {
+    public IntDoubleListElement getLastElement() {
         return tail;
     }
 
-    public IntDoubleListElement getHead() {
+    public IntDoubleListElement getFirstElement() {
         return head;
     }
 
