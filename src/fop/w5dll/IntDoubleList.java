@@ -9,14 +9,6 @@ public class IntDoubleList {
         tail = null;
     }
 
-    public IntDoubleListElement getFirstElement() {
-        return head;
-    }
-
-    public IntDoubleListElement getLastElement() {
-        return tail;
-    }
-
     public void setTail(IntDoubleListElement tail) {
         this.tail = tail;
     }
@@ -25,12 +17,12 @@ public class IntDoubleList {
         this.head = head;
     }
 
-    public IntDoubleListElement getTail() {
-        return tail;
+    public IntDoubleListElement getFirst() {
+        return head;
     }
 
-    public IntDoubleListElement getHead() {
-        return head;
+    public IntDoubleListElement LastElement() {
+        return tail;
     }
 
     public void append(int info) {
@@ -44,11 +36,13 @@ public class IntDoubleList {
             elem = tail;
         }
     }
-	public int size(){
+
+    public int size() {
         int count = 0;
-        while (head != null){
+        while (head != null) {
             head = head.next;
             count++;
-        }return count;
+        }
+        return count;
     }
 }
