@@ -24,6 +24,7 @@ public class IntDoubleListElement {
     }
 
     boolean isEqual(IntDoubleListElement other){
+        if(other == null) return false;
         if(this.getInfo() == other.getInfo()){
             return true;
         }else return false;
