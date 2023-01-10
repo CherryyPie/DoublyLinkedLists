@@ -88,6 +88,7 @@ public class IntDoubleList {
     }
 
     public String toString() {
+        if(this.size() == 0) return "";
         StringBuilder str = new StringBuilder();
         IntDoubleListElement elem = head;
         while (elem != null) {
