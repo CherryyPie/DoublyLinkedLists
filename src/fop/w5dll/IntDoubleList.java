@@ -76,7 +76,12 @@ public class IntDoubleList {
                 head.prev = null;
             }
 
-        } else {
+        } else if (pos == this.size() -1){
+            tail =tail.prev;
+            if(tail.prev != null) tail. next = null;
+        }
+
+        else {
             for (int i = 0; i < pos - 1; i++) {
                 elem = elem.next;
             }
