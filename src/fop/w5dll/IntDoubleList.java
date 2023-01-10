@@ -49,7 +49,7 @@ public class IntDoubleList {
 
     public int get(int pos) {
         IntDoubleListElement elem = head;
-        if(pos < 0 || pos >= this.size()){
+        if (pos < 0 || pos >= this.size()) {
             System.out.println("Invalid input");
             return 0;
         }
@@ -65,6 +65,9 @@ public class IntDoubleList {
 
     public void remove(int pos) {
         IntDoubleListElement elem = head;
+        if (pos < 0 || pos >= this.size()) {
+            System.out.println("Invalid input");
+        }
         if (pos == 0) {
             head = head.next;
             if (head == null) {
@@ -145,13 +148,14 @@ public class IntDoubleList {
             elem = elem.next;
         }
         IntDoubleListElement[] arr = new IntDoubleListElement[count];
-        for (int i = 0; i < this.size(); i++){
-            if(elem2.getInfo() == intValue){
+        for (int i = 0; i < this.size(); i++) {
+            if (elem2.getInfo() == intValue) {
                 break;
-            }elem2 =elem2.next;
+            }
+            elem2 = elem2.next;
         }
 
-        Arrays.fill(arr, elem2 );
+        Arrays.fill(arr, elem2);
         return arr;
     }
 }
