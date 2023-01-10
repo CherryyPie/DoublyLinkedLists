@@ -67,7 +67,7 @@ public class IntDoubleList {
         if (pos < 0 || pos >= this.size()) {
             System.out.println("Invalid input");
         }
-        if (pos == 0) {
+        else if (pos == 0) {
             head = head.next;
             if (head != null) {
                 head.prev = null;
