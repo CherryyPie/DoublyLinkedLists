@@ -104,22 +104,35 @@ public class IntDoubleList {
 
     public boolean isEqual(IntDoubleList other) {
         if (other == null) return false;
-
         else if (this.size() == other.size()) {
             if (this.size() == 0) return true;
-
-            IntDoubleListElement elem1 = this.head;
-            IntDoubleListElement elem2 = other.head;
-            while (elem1 != null && elem2 != null) {
-                if (elem1.getInfo() != elem2.getInfo())
-                    return false;
-
-                elem1 = elem1.next;
-                elem2 = elem2.next;
+            IntDoubleListElement firstList = this.head;
+            IntDoubleListElement secondList = other.head;
+            while (firstList != null && secondList != null) {
+                if (firstList.getInfo() != secondList.getInfo()) return false;
+                firstList = firstList.next;
+                secondList = secondList.next;
             }
             return true;
         }
         return false;
+//        if (other == null) return false;
+//
+//        else if (this.size() == other.size()) {
+//            if (this.size() == 0) return true;
+//
+//            IntDoubleListElement elem1 = this.head;
+//            IntDoubleListElement elem2 = other.head;
+//            while (elem1 != null && elem2 != null) {
+//                if (elem1.getInfo() != elem2.getInfo())
+//                    return false;
+//
+//                elem1 = elem1.next;
+//                elem2 = elem2.next;
+//            }
+//            return true;
+//        }
+//        return false;
     }
 
     public int sum() {
