@@ -5,29 +5,13 @@ public class IntDoubleListElement {
     public IntDoubleListElement next;
     public IntDoubleListElement prev;
 
-    public void setPrev(IntDoubleListElement prev) {
-        this.prev = prev;
-    }
-
-    public void setNext(IntDoubleListElement next) {
-
-        this.next = next;
-    }
 
     public void setInfo(int info) {
 
         this.info = info;
     }
 
-    public IntDoubleListElement getPrev() {
 
-        return prev;
-    }
-
-    public IntDoubleListElement getNext() {
-
-        return next;
-    }
 
     public IntDoubleListElement(int info) {
         this.info = info;

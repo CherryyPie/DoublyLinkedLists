@@ -13,33 +13,15 @@ public class IntDoubleList {
         tail = null;
     }
 
-    public void setTail(IntDoubleListElement tail) {
 
-        this.tail = tail;
-    }
+    public IntDoubleListElement getLastElement() {
 
-    public void setHead(IntDoubleListElement head) {
-
-        this.head = head;
-    }
-
-    public IntDoubleListElement getTail() {
         return tail;
     }
 
-    public IntDoubleListElement getHead() {
+    public IntDoubleListElement getFirstElement() {
 
         return head;
-    }
-
-    public int getLastElement() {
-
-        return tail.getInfo();
-    }
-
-    public int getFirstElement() {
-
-        return head.getInfo();
     }
 
 
