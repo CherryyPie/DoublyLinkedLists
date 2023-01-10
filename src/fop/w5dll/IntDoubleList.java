@@ -143,24 +143,18 @@ public class IntDoubleList {
     }
 
     public IntDoubleListElement[] search(int intValue) {
-        IntDoubleListElement elem = head;
-        IntDoubleListElement elem2 = head;
-        int count = 0;
-        for (int i = 0; i < this.size(); i++) {
-            if (elem.getInfo() == intValue) {
-                count++;
-            }
-            elem = elem.next;
-        }
-        IntDoubleListElement[] arr = new IntDoubleListElement[count];
-        for (int i = 0; i < this.size(); i++) {
-            if (elem2.getInfo() == intValue) {
-                break;
-            }
-            elem2 = elem2.next;
-        }
 
-        Arrays.fill(arr, elem2);
-        return arr;
-    }
+        IntDoubleListElement[] searchResults = new IntDoubleListElement[this.size()];
+        int index = 0;
+        IntDoubleListElement currentElement = head;
+        while (currentElement != null) {
+            if (currentElement.getInfo() == intValue) {
+                searchResults[index] = currentElement;
+                index++;
+            }
+            currentElement = currentElement.next;
+        }
+        IntDoubleListElement[] finalResults = new IntDoubleListElement[index];
+        for (int i = 0; i < index; i++) finalResults[i] = searchResults[i];
+        return finalResults;}
 }
