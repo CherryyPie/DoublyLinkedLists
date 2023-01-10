@@ -48,14 +48,19 @@ public class IntDoubleList {
     }
 
     public int get(int pos) {
+        IntDoubleListElement elem = head;
+        if(pos < 0 || pos >= this.size()){
+            System.out.println("Invalid input");
+            return 0;
+        }
         if (pos == 0) {
             return head.getInfo();
         } else {
             for (int i = 0; i < pos; i++) {
-                head = head.next;
+                elem = elem.next;
             }
         }
-        return head.getInfo();
+        return elem.getInfo();
     }
 
     public void remove(int pos) {
