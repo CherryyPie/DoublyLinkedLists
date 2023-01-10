@@ -88,7 +88,7 @@ public class IntDoubleList {
     }
 
     public String toString() {
-        if(this.size() == 0) return "";
+        if (this.size() == 0) return "";
         StringBuilder str = new StringBuilder();
         IntDoubleListElement elem = head;
         while (elem != null) {
@@ -103,11 +103,9 @@ public class IntDoubleList {
     }
 
     boolean isEqual(IntDoubleList other) {
-        if(other == null) return false;
-        if (this.size() != other.size()) {
-            return false;
-        }
-        if(this.size() == other.size() ) {
+        if (other == null) return false;
+
+        else if (this.size() == other.size()) {
             if (this.size() == 0) return true;
 
             IntDoubleListElement elem1 = this.head;
@@ -120,7 +118,8 @@ public class IntDoubleList {
                 elem2 = elem2.next;
             }
             return true;
-        }return false;
+        }
+        return false;
     }
 
     public int sum() {
