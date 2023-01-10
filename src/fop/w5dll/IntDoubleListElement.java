@@ -1,7 +1,7 @@
 package fop.w5dll;
 
 public class IntDoubleListElement {
-	private int info;
+    private int info;
     public IntDoubleListElement next;
     public IntDoubleListElement prev;
 
@@ -10,18 +10,22 @@ public class IntDoubleListElement {
     }
 
     public void setNext(IntDoubleListElement next) {
+
         this.next = next;
     }
 
     public void setInfo(int info) {
+
         this.info = info;
     }
 
     public IntDoubleListElement getPrev() {
+
         return prev;
     }
 
     public IntDoubleListElement getNext() {
+
         return next;
     }
 
@@ -33,5 +37,11 @@ public class IntDoubleListElement {
 
     public int getInfo() {
         return info;
+    }
+
+    boolean isEqual(IntDoubleListElement other){
+        if(this.getInfo() == other.getInfo()){
+            return true;
+        }else return false;
     }
 }
