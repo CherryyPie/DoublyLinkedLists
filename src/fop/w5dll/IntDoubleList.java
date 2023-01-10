@@ -76,24 +76,20 @@ public class IntDoubleList {
                 head.prev = null;
             }
 
-        } else if (pos == this.size() -1){
-            tail =tail.prev;
-            if(tail.prev != null) tail. next = null;
-        }
-
-        else {
-            for (int i = 0; i < pos - 1; i++) {
+        } else if (pos == this.size() - 1) {
+            tail = tail.prev;
+            if (tail.prev != null) tail.next = null;
+        } else {
+            for (int i = 0; i < pos; i++) {
                 elem = elem.next;
+                elem.prev.next = elem.next;
+                elem.next.prev = elem.prev;
             }
-            elem.next = elem.next.next;
-            if (elem.next == null) {
-                tail = elem;
-            } else elem.next.prev = elem;
         }
     }
 
     public String toString() {
-        if(this.size() == 0) return "";
+        if (this.size() == 0) return "";
         StringBuilder str = new StringBuilder();
         IntDoubleListElement elem = head;
         while (elem != null) {
@@ -108,9 +104,9 @@ public class IntDoubleList {
     }
 
     boolean isEqual(IntDoubleList other) {
-        if(other == null) return false;
-        if(this.size() == other.size() ) {
-            if (this.size() == 0)return true;
+        if (other == null) return false;
+        if (this.size() == other.size()) {
+            if (this.size() == 0) return true;
         }
         if (this.size() != other.size()) {
             return false;
@@ -161,5 +157,6 @@ public class IntDoubleList {
         }
         IntDoubleListElement[] finalResults = new IntDoubleListElement[index];
         for (int i = 0; i < index; i++) finalResults[i] = searchResults[i];
-        return finalResults;}
+        return finalResults;
+    }
 }
