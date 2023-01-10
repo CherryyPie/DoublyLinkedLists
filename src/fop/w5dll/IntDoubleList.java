@@ -17,21 +17,22 @@ public class IntDoubleList {
         this.head = head;
     }
 
-    public IntDoubleListElement getLastElement() {
+    public IntDoubleListElement getTail() {
         return tail;
     }
 
-    public IntDoubleListElement getFirstElement() {
+    public IntDoubleListElement getHead() {
         return head;
     }
 
-    public IntDoubleListElement getFirst() {
-        return head;
+    public int getLastElement() {
+        return tail.getInfo();
     }
 
-    public IntDoubleListElement LastElement() {
-        return tail;
+    public int getFirstElement() {
+        return head.getInfo();
     }
+
 
     public void append(int info) {
         IntDoubleListElement elem = new IntDoubleListElement(info);
@@ -52,5 +53,37 @@ public class IntDoubleList {
             count++;
         }
         return count;
+    }
+
+    public int get(int pos) {
+        if (pos == 0) {
+            return head.getInfo();
+        } else {
+            for (int i = 0; i < pos; i++) {
+                head = head.next;
+            }
+        }
+        return head.getInfo();
+    }
+
+    public void remove(int pos) {
+        if (pos == 0) {
+            head = head.next;
+            if (head == null) {
+                tail = null;
+            } else {
+                head.prev = null;
+            }
+
+        }else {
+            IntDoubleListElement elem = head;
+            for (int i = 0; i < pos-1; i++) {
+                elem = elem.next;
+            }
+            elem.next = elem.next.next;
+            if (elem.next == null){
+                tail = elem;
+            }else elem.next.prev = elem;
+        }
     }
 }
