@@ -64,7 +64,6 @@ public class IntDoubleList {
     }
 
     public void remove(int pos) {
-        IntDoubleListElement elem = head;
         if (pos < 0 || pos >= this.size()) {
             System.out.println("Invalid input");
         }
@@ -78,11 +77,12 @@ public class IntDoubleList {
             tail = tail.prev;
             if (tail.prev != null) tail.next = null;
         } else {
-            for (int i = 0; i < pos; i++) {
+            IntDoubleListElement elem = head;
+            for (int i = 0; i < pos; i++)
                 elem = elem.next;
                 elem.prev.next = elem.next;
                 elem.next.prev = elem.prev;
-            }
+
         }
     }
 
