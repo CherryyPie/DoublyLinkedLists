@@ -108,10 +108,10 @@ public class IntDoubleList {
         if (this.size() != other.size()) {
             return false;
         }
-        IntDoubleListElement elem1 = head;
+        IntDoubleListElement elem1 = this.head;
         IntDoubleListElement elem2 = other.head;
-        while (elem1 != null) {
-            if (!elem1.isEqual(elem2)) {
+        while (elem1 != null && elem2 != null) {
+            if (elem1.getInfo() != elem2.getInfo()) {
                 return false;
             }
             elem1 = elem1.next;
