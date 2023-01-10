@@ -96,13 +96,15 @@ public class IntDoubleList {
                 str.append(elem.getInfo());
                 break;
             }
-            str.append(elem.getInfo()).append(", ");
+            str.append(elem.getInfo()).append(",");
             elem = elem.next;
         }
         return str.toString();
     }
 
     boolean isEqual(IntDoubleList other) {
+        if(other == null) return false;
+        if(this.size() == other.size() && this.size() ==0) return true;
         if (this.size() != other.size()) {
             return false;
         }
