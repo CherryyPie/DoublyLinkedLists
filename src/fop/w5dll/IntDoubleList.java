@@ -70,9 +70,7 @@ public class IntDoubleList {
         }
         if (pos == 0) {
             head = head.next;
-            if (head == null) {
-                tail = null;
-            } else {
+            if (head != null) {
                 head.prev = null;
             }
 
