@@ -102,7 +102,7 @@ public class IntDoubleList {
         return str.toString();
     }
 
-    boolean isEqual(IntDoubleList other) {
+    public boolean isEqual(IntDoubleList other) {
         if (other == null) return false;
 
         else if (this.size() == other.size()) {
@@ -111,7 +111,7 @@ public class IntDoubleList {
             IntDoubleListElement elem1 = this.head;
             IntDoubleListElement elem2 = other.head;
             while (elem1 != null && elem2 != null) {
-                if (elem1.getInfo() != elem2.getInfo()) 
+                if (elem1.getInfo() != elem2.getInfo())
                     return false;
 
                 elem1 = elem1.next;
