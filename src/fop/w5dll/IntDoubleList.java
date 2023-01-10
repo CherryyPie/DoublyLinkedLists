@@ -111,9 +111,9 @@ public class IntDoubleList {
             IntDoubleListElement elem1 = this.head;
             IntDoubleListElement elem2 = other.head;
             while (elem1 != null && elem2 != null) {
-                if (elem1.getInfo() != elem2.getInfo()) {
+                if (elem1.getInfo() != elem2.getInfo()) 
                     return false;
-                }
+
                 elem1 = elem1.next;
                 elem2 = elem2.next;
             }
